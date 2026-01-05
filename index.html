@@ -1,76 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | UI/UX Portfolio</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Puneet Loona — Home</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <meta name="description" content="Home page for Puneet Loona"> 
 </head>
-
 <body>
-
-  <!-- Navigation -->
-  <header class="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">YourName</a>
-
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="mailto:your@email.com">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#home">Puneet Loona</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
   <main>
-    <section class="hero container">
-      <h1>Hi, I’m <span>Your Name</span></h1>
-      <p class="hero-subtitle">
-        UI/UX Designer crafting intuitive and meaningful digital experiences.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="about.html" class="btn secondary">About Me</a>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Hello — I'm Puneet</h1>
+        <p class="lead">A simple homepage showcasing blogs, projects and contact info.</p>
+        <p><a class="btn" href="#portfolio">View portfolio</a></p>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects container">
-      <h2>Selected Work</h2>
+    <section id="blogs" class="section">
+      <div class="container">
+        <h2>Blogs</h2>
+        <p>Latest thoughts and tutorials will appear here. Link your blog posts from the _posts or pages.</p>
+      </div>
+    </section>
 
-      <div class="project-grid">
+    <section id="portfolio" class="section alt">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p>Showcase your projects here. Add project cards or link to external repos.</p>
+      </div>
+    </section>
 
-        <a href="projects/project1.html" class="project-card">
-          <img src="assets/images/project1.jpg" alt="Project 1">
-          <h3>Project Title One</h3>
-          <p>Short description of the project.</p>
-        </a>
-
-        <a href="projects/project2.html" class="project-card">
-          <img src="assets/images/project2.jpg" alt="Project 2">
-          <h3>Project Title Two</h3>
-          <p>Short description of the project.</p>
-        </a>
-
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>You can reach me via email: <a href="mailto:hello@example.com">hello@example.com</a></p>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 Your Name. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Puneet Loona</p>
+    </div>
   </footer>
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
-
+  <script>
+    // Simple nav toggle for small screens
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      btn.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('open');
+      });
+    })();
+  </script>
 </body>
 </html>
